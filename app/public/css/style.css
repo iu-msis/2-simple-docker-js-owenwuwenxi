@@ -1,0 +1,60 @@
+nav{
+  font-family: sans-serif;
+}
+
+footer{
+  background-color: lightgrey;
+  text-align:center;
+  padding: 7px;
+  position: relative;
+  bottom: 0;
+  width: inherit;
+  margin: 5px;
+}
+
+img{
+  align-items:center;
+}
+
+main{
+  background-color: mintcream;
+}
+
+.pad{
+  padding:10px;
+}
+table{
+    border: 1px solid;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid;
+    text-align: center;
+    border-color: black;
+    padding: 5px;
+}
+th{
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+thead{
+    background-color: darkred;
+    color: mintcream;
+}
+tr:nth-child(even){
+    background-color: lightgray;
+}
+tbody>tr:hover{
+    background-color: indianred;
+}
+tfoot{
+    background-color: dimgrey;
+    color: mintcream;
+    padding: 5px;
+}
+#DropDown:hover{
+  background-color: dimgrey;
+}
