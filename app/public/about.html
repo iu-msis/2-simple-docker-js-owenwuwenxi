@@ -42,6 +42,10 @@
     </nav>
 
     <div class="container">
+      <div id='usefprofile'>
+        <h4> Name - {{userName}}</h4>
+        <h4> Email - {{userEmail}}</h4>
+      </div>
       <div class="row">
         <label>Name:</label>
         Michael Owen
@@ -91,5 +95,7 @@
       // Tablesort plugin from http://tristen.ca/tablesort/demo/
       new Tablesort(document.getElementById('books'));
     </script>
+    <script src="js/profile.app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </body>
 </html>
