@@ -45,6 +45,9 @@
       <div id='usefprofile'>
         <h4> Name - {{userName}}</h4>
         <h4> Email - {{userEmail}}</h4>
+        <a v-bind:href="userImageLarge">
+          <img v-bind:src="userImageThumb">
+        </a>
       </div>
       <div class="row">
         <label>Name:</label>
@@ -96,6 +99,6 @@
       new Tablesort(document.getElementById('books'));
     </script>
     <script src="js/profile.app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   </body>
 </html>
