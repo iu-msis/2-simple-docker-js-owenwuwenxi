@@ -1,5 +1,5 @@
 var app = new Vue ({
-  el: '#usefprofile',
+  el: '#usefProfile',
   data: {
     userName: '',
     userEmail:'',
