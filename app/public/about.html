@@ -54,6 +54,13 @@
           <img v-bind:src="userImageThumb">
         </a>
       </div>
+      <br>
+      <form method="get" v-on:submit.prevent='fetchUser' id="userProfile">
+      <div class="container">
+        <button type="submit">Refresh</button>
+      </div>
+      </form>
+
       <footer class="row">
         Michael Owen | Phone (123) 456-7890 | 1234 E Elizabeth Ave, London, UK
       </footer>
