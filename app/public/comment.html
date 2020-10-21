@@ -7,22 +7,21 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css\style.css">
     <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <title>Home Page</title>
+    <title>Comment App</title>
   </head>
   <body>
-    <div class="container" id="userProfile">
+    <div class="container" id="comment">
       <header class="row">
         <div class="col-12">
           <a href="img/Real-Madrid-Logo-1997-2001.jpg" target="_blank"><img class="pad" src="img/Real-Madrid-Logo-1997-2001.jpg" width=100>
           </a>
-          {{userName}} - Someone You Should Know
         </div>
       </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="userProfile">
-      <a class="navbar-brand" href="index.html">{{userName}}</a>
+      <a class="navbar-brand" href="index.html">Comment App</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,38 +36,53 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html" id="DropDown">About Me</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comment.html" id="DropDown">Comment</a>
+          </li>
         </ul>
       </div>
     </nav>
 
-    <main class="row">
-      <div class="col-12">
-        <a href="img\Spain.jpg" target="_blank"><img class="pad" src="img\Spain.jpg" height=400></a>
-      </div>
-        <div class="row">
-          Pic Source:<a href="https://www.fodors.com/world/europe/spain/experiences/news/ultimate-things-to-do-in-spain">Fodors.com</a>
+    <div class="container-fluid">
+      <div class="row" id="commentredocrd">
+        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+          <h3>List of all comments</h3>
+          <div class="col-6">
+          <table id="commentTable">
+             <thead>
+                 <tr>
+                     <th>Comment ID</th>
+                     <th>Comment Text</th>
+                 </tr>
+              </thead>
+
+              <tbody id="commentTableBody">
+              <tr id="Comments" v-for="comment in cmList">
+                  <td class="commentID"> {{ comment.commentID }}</td>
+                  <td class="commentText">{{ comment.commentText }}</td>
+              </tr>
+
+              </tbody>
+          </table>
         </div>
-      <div class="row">
-        <div class="col myLeftCol">
+          <!-- <button v-on:click="yell()">Click Me!</button> -->
         </div>
-        <div class="col-6" id="userProfile">
-          <h1>{{userName}}</h1><hr>
-          <a href="img/Michael_Owen.jpg" target="_blank"><img class="pad" src="img/Michael_Owen.jpg"></a>
-          <div class="row">
-            Pic Source:<a href="https://liverpoolfc.fandom.com/wiki/Michael_Owen">Liverpoolfc.fandom.com</a>
+
+
+        <div class="col-6">
+          <h1>New Comments</h1>
+          <form v-on:submit.prevent="createComment()" id="newCommentForm" method="post">
+
+          <div class="form-group">
+            <label for="commentText">Comment Text</label>
+            <input type="text" class="form-control" id="commentText" rows="5" v-model="newComment.commentText"></input>
           </div>
-          <div class="col-xs-12 col-sk-12 col-md-12 col-lg-12">
-          <p>Welcome to the homepage of {{userName}}! <br>
-            One of the most well-known singer/songwriter, actor, and athelete in the world.</p>
-            </div>
-        </div>
-        <div class="col">
+          <button type="submit" id="submitNewComment" class="btn btn-primary">Submit Comment</button>
+
+        </form>
         </div>
       </div>
-    </main>
-      <footer class="row">
-        Michael Owen | Phone (123) 456-7890 | 1234 E Elizabeth Ave, London, UK
-      </footer>
+    </div>
     </div>
     <!-- END content -->
 
@@ -79,8 +93,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="js/profile.app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/comment.app.js"></script>
   </body>
 </html>
