@@ -63,5 +63,5 @@ var commentApp = new Vue({
     //);
     //this.cm = this.newCMData();
   //}
-}
-)
+},
+})
