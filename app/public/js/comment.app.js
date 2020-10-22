@@ -3,12 +3,12 @@ var commentApp = new Vue({
   data: {
     cmList: [{
       commentText:'',
-      commentID:''
+      commentId:''
     }],
 
     newComment: {
       commentText:'',
-      commentID:''
+      commentId:''
     },
   },
 
@@ -49,10 +49,11 @@ var commentApp = new Vue({
     newCMData() {
       return {
         commentText: "",
-        commentID:""
+        commentId:""
       }
-    },
-  create() {
+    }
+  },
+  created() {
     this.fetchComment();
   }
     //.then( response => response.json() )
@@ -63,5 +64,4 @@ var commentApp = new Vue({
     //);
     //this.cm = this.newCMData();
   //}
-},
 })

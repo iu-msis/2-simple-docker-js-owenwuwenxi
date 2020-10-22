@@ -9,10 +9,10 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Comments';
 $vars = [];
 
-if (isset($_GET['commentID'])) {
+if (isset($_GET['commentId'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Comments WHERE commentID = ?';
-  $vars = [ $_GET['commentID'] ];
+  $sql = 'SELECT * FROM Comments WHERE commentId = ?';
+  $vars = [ $_GET['commentId'] ];
 }
 
 $stmt = $db->prepare($sql);
