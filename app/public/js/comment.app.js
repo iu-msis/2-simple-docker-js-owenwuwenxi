@@ -1,14 +1,14 @@
 var commentApp = new Vue({
-  el: '#commentrecord',
+  el: '#commentRecord',
   data: {
     cmList: [{
       commentText:'',
-      commentId:''
+      commentD:''
     }],
 
     newComment: {
       commentText:'',
-      commentId:''
+      commentID:''
     },
   },
 
@@ -44,12 +44,19 @@ var commentApp = new Vue({
 
       console.log("Creating (POSTing)...!");
       console.log(this.newComment);
+
+      fetch('api/comments/')
+      .then( response => response.json() )
+      .then( json => {
+        this.cmList = json;
+        console.log(this.cmList);
+      });
     },
 
     newCMData() {
       return {
-        commentText: "",
-        commentId:""
+        commentText:"",
+        commentID:""
       }
     }
   },

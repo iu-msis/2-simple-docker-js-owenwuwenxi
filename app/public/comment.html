@@ -44,7 +44,7 @@
     </nav>
 
     <div class="container-fluid">
-      <div class="row" id="commentrecord">
+      <div class="row" id="commentRecord">
         <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
           <h3>List of all comments</h3>
           <div class="col-6">
@@ -57,9 +57,9 @@
               </thead>
 
               <tbody id="commentTableBody">
-              <tr id="Comments" v-for="comment in cmList">
-                  <td class="commentId"> {{ comment.commentId }}</td>
-                  <td class="commentText">{{ comment.commentText }}</td>
+              <tr id="Comments" v-for="commentRecord in cmList">
+                  <td class="commentID"> {{ commentRecord.commentID }}</td>
+                  <td class="commentText">{{ commentRecord.commentText }}</td>
               </tr>
 
               </tbody>
@@ -71,7 +71,7 @@
 
         <div class="col-6">
           <h1>New Comments</h1>
-          <form v-on:submit.prevent="createComment()" id="newCommentForm" method="post">
+          <form v-on:submit.prevent="createComment()" v-on:submit.prevent='fetchComment' id="commentRecord" method="post">
 
           <div class="form-group">
             <label for="commentText">Comment Text</label>
